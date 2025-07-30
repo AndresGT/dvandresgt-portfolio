@@ -1,0 +1,27 @@
+<nav class="navbar">
+    <div class="logo">
+        <a routerLink="/home" class="logo">
+            <div>
+                <svg class="logo-dev" si-htmx-icon></svg>
+            </div>
+            <div>
+                <div class="logo-title">DvAndresGT</div>
+                <div class="logo-subtitle">TI · Software & Hardware</div>
+            </div>
+        </a>
+
+    </div>
+
+    <ul class="nav-links">
+        <li><a routerLink="/home" routerLinkActive="active">{{ 'NAV.HOME' | translate }}</a></li>
+        <li><a routerLink="/perfil" routerLinkActive="active">{{ 'NAV.ABOUT' | translate }}</a></li>
+        <li><a routerLink="/proyectos" routerLinkActive="active">{{ 'NAV.PROJECTS' | translate }}</a></li>
+        <li><a routerLink="/contacto" routerLinkActive="active">{{ 'NAV.CONTACT' | translate }}</a></li>
+    </ul>
+
+    <div class="lang-switch">
+        <button (click)="switchLang('es')">ES</button>
+        <span>|</span>
+        <button (click)="switchLang('en')">EN</button>
+    </div>
+</nav>

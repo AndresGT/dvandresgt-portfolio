@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@use './styles/variables.scss' as vars;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: vars.$primary-color;
+  
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+}
+
+body {
+  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; // IE 10+
+  background-image: url("/assets/img/fondo.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.87);
+  background-blend-mode: darken;
+}

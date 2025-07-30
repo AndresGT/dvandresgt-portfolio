@@ -1,0 +1,19 @@
+//ejemplo de uso de variables globales en scss
+
+/*
+@use 'src/styles/variables' as vars;
+
+.button {
+  background-color: vars.$color-principal;
+  font-family: vars.$fuente-principal;
+
+} */
+
+//Colors
+$primary-color: #ffffff;
+$secondary-color: #000000;
+$grey-color: #666666;
+
+//Fonts
+$font-primary: "Inter", sans-serif;
+$font-secondary: "Roboto", sans-serif;

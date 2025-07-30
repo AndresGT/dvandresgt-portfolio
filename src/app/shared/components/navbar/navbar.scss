@@ -37,19 +37,88 @@
       font-size: 1rem;
     }
   }
-  .nav-links{
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    width: 60%;
-    li{
-        list-style: none;
-        a{
-            text-decoration: none;
-            font-family: vars.$font-primary
-        
+  // nav.component.scss
+
+  .nav-bar {
+    width: 60rem;
+    .nav {
+      margin: 0 5.5rem;
+      .nav-list {
+        display: flex;
+        gap: 5rem;
+        align-items: end;
+        background: linear-gradient(
+          180deg,
+          #000 0%,
+          rgba(255, 255, 255, 0) 100%
+        );
+
+        .nav-item {
+          position: relative;
+          margin: 1.8rem 0.44rem 1rem;
+          height: 0.18rem;
+          cursor: pointer;
+          pointer-events: auto;
+          text-decoration: none;
+          
+
+          .nav-item-hover {
+            position: absolute;
+            bottom: -1.3rem;
+            left: 50%;
+            width: 4.2rem;
+            height: 3rem;
+            transform: translateX(-50%);
+            z-index: 1;
+            opacity: 0;
+            background: url("/assets/img/center.png") repeat center center;
+            filter: brightness(0) invert(1);            background-size: 100% 100%;
+            transition: all 0.3s;
+            pointer-events: none;
+
+
+            &::before,
+            &::after {
+              content: "";
+              position: absolute;
+              top: 0;
+            }
+
+            &::before {
+              width: 10.1rem;
+              height: 100%;
+              background: url("/assets/img/izquierda.png") no-repeat center
+                center;
+              background-size: 100% 100%;
+              left: -10.1rem;
+            }
+
+            &::after {
+              width: 10.1rem;
+              height: 100%;
+              background: url("/assets/img/derecha.png") no-repeat center center;
+              background-size: 100% 100%;
+              right: -10.1rem;
+            }
+          }
+
+          &.active {
+            .nav-item-name {
+              font-weight: 600;
+              color: vars.$primary-color;
+              font-family: vars.$font-primary;
+            }
+
+            .nav-item-hover {
+              opacity: 1;
+            }
+          }
         }
+
+        &.nav-list-fr {
+          transform: translateX(-1rem);
+        }
+      }
     }
   }
-
 }

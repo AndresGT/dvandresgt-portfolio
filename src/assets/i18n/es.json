@@ -5,5 +5,9 @@
     "PROJECTS": "Proyectos",
     "CONTACT": "Contacto",
     "LANGUAGE": "Idioma"
+  },
+  "HOME": {
+    "DESCRIPTION":"Desarrollador multiplataforma con experiencia en diversas tecnologías. Especializado en desarrollo de aplicaciones, tanto back-end como front-end. Apasionado por crear soluciones tecnológicas innovadoras y eficientes, uniendo funcionalidad con diseño.",
+    "DOWNLOAD":"Descargar CV"
   }
 }

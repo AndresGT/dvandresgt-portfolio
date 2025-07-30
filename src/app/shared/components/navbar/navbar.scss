@@ -40,7 +40,7 @@
   // nav.component.scss
 
   .nav-bar {
-    width: 60rem;
+    width: 50rem;
     .nav {
       margin: 0 5.5rem;
       .nav-list {
@@ -121,4 +121,45 @@
       }
     }
   }
+  //buttons language
+  .lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'mc-gamefont', sans-serif;
+  
+    button {
+      background: transparent;
+      border: none;
+      color: #bbb;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      transition: color 0.3s, background-color 0.3s;
+  
+      &:hover {
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+  
+      &.active {
+        color: #fff;
+        font-weight: bold;
+        text-shadow: 0 0 6px #f0f0f0;
+        border-bottom: 2px solid #fff;
+      }
+  
+      &:focus {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+      }
+    }
+  
+    span {
+      color: #888;
+      font-weight: bold;
+    }
+  }
+
 }

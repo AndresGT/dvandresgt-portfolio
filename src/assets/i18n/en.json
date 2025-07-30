@@ -5,5 +5,9 @@
     "PROJECTS": "Projects",
     "CONTACT": "Contact",
     "LANGUAGE": "Language"
+  },
+  "HOME": {
+    "DESCRIPTION": "Cross-platform developer with experience in various technologies. Specialized in both back-end and front-end application development. Passionate about creating innovative and efficient tech solutions, merging functionality with design.",
+    "DOWNLOAD": "Download CV"
   }
 }

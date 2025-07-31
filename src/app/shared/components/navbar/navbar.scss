@@ -1,165 +1,261 @@
 @use "../../../../styles/variables.scss" as vars;
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 4rem;
-  .logo {
+@media (min-width: 1300px) {
+  .navbar {
     display: flex;
-    flex-direction: row;
-    gap: 1.6rem;
-    align-items: center;
-    text-decoration: none;
-    .logo-dev {
-      width: 3.5rem;
-      fill: vars.$primary-color;
-      animation: pulse 0.7s infinite alternate ease-in-out;
+    justify-content: space-between;
+    padding: 0.5rem 4rem;
+    .logo {
+      display: flex;
+      flex-direction: row;
+      gap: 1.6rem;
+      align-items: center;
+      text-decoration: none;
+      .logo-dev {
+        width: 3.5rem;
+        fill: vars.$primary-color;
+        animation: pulse 0.7s infinite alternate ease-in-out;
 
-      @keyframes pulse {
-        0% {
-          transform: scale(1);
-        }
-        100% {
-          transform: scale(1.2);
+        @keyframes pulse {
+          0% {
+            transform: scale(1);
+          }
+          100% {
+            transform: scale(1.2);
+          }
         }
       }
+      .logo-title {
+        font-family: vars.$font-primary;
+        font-weight: 800;
+        text-align: center;
+        font-size: 1.5rem;
+        pointer-events: none;
+      }
+      .logo-subtitle {
+        font-family: vars.$font-primary;
+        font-weight: 200;
+        text-align: center;
+        font-size: 1rem;
+        pointer-events: none;
+      }
     }
-    .logo-title {
-      font-family: vars.$font-primary;
-      font-weight: 800;
-      text-align: center;
-      font-size: 1.5rem;
-    }
-    .logo-subtitle {
-      font-family: vars.$font-primary;
-      font-weight: 200;
-      text-align: center;
-      font-size: 1rem;
-    }
-  }
-  // nav.component.scss
+    // nav.component.scss
 
-  .nav-bar {
-    width: 50rem;
-    .nav {
-      margin: 0 5.5rem;
-      .nav-list {
-        display: flex;
-        gap: 5rem;
-        align-items: end;
-        background: linear-gradient(
-          180deg,
-          #000 0%,
-          rgba(255, 255, 255, 0) 100%
-        );
+    .nav-bar {
+      width: 50rem;
+      .nav {
+        margin: 0 5.5rem;
+        .nav-list {
+          display: flex;
+          gap: 5rem;
+          align-items: end;
+          background: linear-gradient(
+            180deg,
+            #000 0%,
+            rgba(255, 255, 255, 0) 100%
+          );
 
-        .nav-item {
-          position: relative;
-          margin: 1.8rem 0.44rem 1rem;
-          height: 0.18rem;
-          cursor: pointer;
-          pointer-events: auto;
-          text-decoration: none;
-          
-
-          .nav-item-hover {
-            position: absolute;
-            bottom: -1.3rem;
-            left: 50%;
-            width: 4.2rem;
-            height: 3rem;
-            transform: translateX(-50%);
-            z-index: 1;
-            opacity: 0;
-            background: url("/assets/img/center.png") repeat center center;
-            filter: brightness(0) invert(1);            background-size: 100% 100%;
-            transition: all 0.3s;
-            pointer-events: none;
-
-
-            &::before,
-            &::after {
-              content: "";
-              position: absolute;
-              top: 0;
-            }
-
-            &::before {
-              width: 10.1rem;
-              height: 100%;
-              background: url("/assets/img/izquierda.png") no-repeat center
-                center;
-              background-size: 100% 100%;
-              left: -10.1rem;
-            }
-
-            &::after {
-              width: 10.1rem;
-              height: 100%;
-              background: url("/assets/img/derecha.png") no-repeat center center;
-              background-size: 100% 100%;
-              right: -10.1rem;
-            }
-          }
-
-          &.active {
-            .nav-item-name {
-              font-weight: 600;
-              color: vars.$primary-color;
-              font-family: vars.$font-primary;
-            }
+          .nav-item {
+            position: relative;
+            margin: 1.8rem 0.44rem 1rem;
+            height: 0.18rem;
+            cursor: pointer;
+            pointer-events: auto;
+            text-decoration: none;
 
             .nav-item-hover {
-              opacity: 1;
+              position: absolute;
+              bottom: -1.3rem;
+              left: 50%;
+              width: 4.2rem;
+              height: 3rem;
+              transform: translateX(-50%);
+              z-index: 1;
+              opacity: 0;
+              background: url("/assets/img/center.png") repeat center center;
+              filter: brightness(0) invert(1);
+              background-size: 100% 100%;
+              transition: all 0.3s;
+              pointer-events: none;
+
+              &::before,
+              &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+              }
+
+              &::before {
+                width: 10.1rem;
+                height: 100%;
+                background: url("/assets/img/izquierda.png") no-repeat center
+                  center;
+                background-size: 100% 100%;
+                left: -10.1rem;
+              }
+
+              &::after {
+                width: 10.1rem;
+                height: 100%;
+                background: url("/assets/img/derecha.png") no-repeat center
+                  center;
+                background-size: 100% 100%;
+                right: -10.1rem;
+              }
+            }
+
+            &.active {
+              .nav-item-name {
+                font-weight: 600;
+                color: vars.$primary-color;
+                font-family: vars.$font-primary;
+              }
+
+              .nav-item-hover {
+                opacity: 1;
+              }
+            }
+          }
+
+          &.nav-list-fr {
+            transform: translateX(-1rem);
+          }
+        }
+      }
+    }
+    //buttons language
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: "mc-gamefont", sans-serif;
+
+      button {
+        background: transparent;
+        border: none;
+        color: #bbb;
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 0.3rem 0.6rem;
+        border-radius: 4px;
+        transition:
+          color 0.3s,
+          background-color 0.3s;
+
+        &:hover {
+          color: #fff;
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        &.active {
+          color: #fff;
+          font-weight: bold;
+          text-shadow: 0 0 6px #f0f0f0;
+          border-bottom: 2px solid #fff;
+        }
+
+        &:focus {
+          outline: 2px solid #fff;
+          outline-offset: 2px;
+        }
+      }
+
+      span {
+        color: #888;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media (max-width: 1299px) {
+  .navbar {
+    display: flex;
+    .logo {
+      display: none;
+    }
+    .nav-bar {
+      width: 90%;
+    
+      .nav {
+        margin: 0.6rem 1rem;
+    
+        .nav-list {
+          display: flex;
+          gap: 1rem;
+          align-items: end;
+    
+          .nav-item {
+            position: relative;
+            padding-bottom: 0.5rem;
+            cursor: pointer;
+            text-decoration: none;
+            color: white; // o el color que uses
+    
+            &::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              height: 2px;
+              background-color: white; // dorado o el color que desees
+              transform: scaleX(0);
+              transform-origin: bottom right;
+              transition: transform 0.3s ease;
+            }
+    
+            &.active::after {
+              transform: scaleX(1);
+              transform-origin: bottom left;
             }
           }
         }
+      }
+    }
 
-        &.nav-list-fr {
-          transform: translateX(-1rem);
+    //buttons language
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: "mc-gamefont", sans-serif;
+
+      button {
+        background: transparent;
+        border: none;
+        color: #bbb;
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 0.3rem 0.6rem;
+        border-radius: 4px;
+        transition:
+          color 0.3s,
+          background-color 0.3s;
+
+        &:hover {
+          color: #fff;
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        &.active {
+          color: #fff;
+          font-weight: bold;
+          text-shadow: 0 0 6px #f0f0f0;
+          border-bottom: 2px solid #fff;
+        }
+
+        &:focus {
+          outline: 2px solid #fff;
+          outline-offset: 2px;
         }
       }
-    }
-  }
-  //buttons language
-  .lang-switch {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: 'mc-gamefont', sans-serif;
-  
-    button {
-      background: transparent;
-      border: none;
-      color: #bbb;
-      font-size: 1rem;
-      cursor: pointer;
-      padding: 0.3rem 0.6rem;
-      border-radius: 4px;
-      transition: color 0.3s, background-color 0.3s;
-  
-      &:hover {
-        color: #fff;
-        background-color: rgba(255, 255, 255, 0.1);
-      }
-  
-      &.active {
-        color: #fff;
-        font-weight: bold;
-        text-shadow: 0 0 6px #f0f0f0;
-        border-bottom: 2px solid #fff;
-      }
-  
-      &:focus {
-        outline: 2px solid #fff;
-        outline-offset: 2px;
-      }
-    }
-  
-    span {
-      color: #888;
-      font-weight: bold;
-    }
-  }
 
+      span {
+        color: #888;
+        font-weight: bold;
+      }
+    }
+  }
 }

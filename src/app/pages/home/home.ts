@@ -19,7 +19,7 @@ export class Home {
   
   descargarArchivo() {
     const link = document.createElement("a");
-    link.href = "assets/CV-Andres-Giraldo.pdf";
+    link.href = "assets/documents/CV-Andres-Giraldo.pdf";
     link.download = "CV-Andres-Giraldo.pdf";
     link.click();
   }
